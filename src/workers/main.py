@@ -1,10 +1,10 @@
 import neo4j
 from neo4j import GraphDatabase
 
-from app.services import files as file_service
-from app.services import graphdb as graphdb_service
-from app.entities.signup import ApiObject
-from app.entities.signup import ApiSignupObject
+from src.services import files as file_service
+from src.services import graphdb as graphdb_service
+from src.entities.signup import ApiObject
+from src.entities.signup import ApiSignupObject
 
 
 def run():
@@ -12,7 +12,7 @@ def run():
         uri = "neo4j://localhost:7687"
         driver = GraphDatabase.driver(uri, auth=("neo4j", "123456"), max_connection_lifetime=1000)
         # some comment
-        rows = file_service.read_lines(file_location="app/resources/api.txt")
+        rows = file_service.read_lines(file_location="src/resources/api.txt")
         for row in rows:
             api_object = ApiObject.get_from_row_of_log(row=row)
             if not api_object.is_signup_new_account():

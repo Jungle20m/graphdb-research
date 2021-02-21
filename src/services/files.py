@@ -1,10 +1,5 @@
 
 
-# from app.services.files import 
-
-
-
-
 def read_lines(file_location):
     try:
         with open(file_location, 'r', encoding='utf-8') as file_handler:
