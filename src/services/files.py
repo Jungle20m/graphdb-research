@@ -8,3 +8,9 @@ def read_lines(file_location):
     except Exception as e:
         print(e)
         return []
+
+def read_lines_csv(file_location):
+    try:
+        pass
+    except Exception as e:
+        pass
